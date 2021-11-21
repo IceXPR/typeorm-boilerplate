@@ -3,15 +3,17 @@ import "reflect-metadata";
 import { Connection, createConnection } from "typeorm";
 import { User } from "./entity/User";
 import express = require('express');
+import morgan = require('morgan');
 
-const admin = express()
-admin.use(express.json());
+const admin = express()    // for admin mount
+admin.use(express.json()); // json in body
 
-const app = express()
-app.use(express.json());
-app.use('/admin', admin) 
+const app = express()      // main app
+app.use(morgan('short'));   // logging
+app.use(express.json());   // json in body
+app.use('/admin', admin)   // create routet for admin page
 
-const port = 3000
+const port = process.env.PORT || 3000 // environmental or hardcode
 
 createConnection().then(async connection => {
 
