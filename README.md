@@ -1,8 +1,6 @@
 # TypeORM+ExpressJS boilerplate
 A boilerplate code to run TypeORM with Express.JS using SQLite
 
-## Awesome Project Build with TypeORM
-
 ## Deploy
 ``` bash
 npm i
