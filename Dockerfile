@@ -3,4 +3,4 @@ RUN mkdir /src
 COPY . /src
 WORKDIR /src
 RUN npm install
-ENTRYPOINT [ "npm start" ]
+ENTRYPOINT [ "npm", "start" ]
